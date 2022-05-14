@@ -93,7 +93,7 @@ bot.on('message', msg => {
 })
 
 bot.on('message', msg => {
-	const { id } = msg.chat
+	const { id } = msg.from
 
 	if (msg.text === 'Titanic') {
 		bot.sendPhoto(id, './img/titanic.jpeg', {
@@ -210,15 +210,14 @@ bot.on('callback_query', msg => {
 
 bot.on('location', async msg => {
 	const { latitude, longitude } = msg.location
+	const { id } = msg.chat
 
 	const location = await fetch(
 		`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=87f526f534114673b84ec3e7d9b3adda`
 	)
 	const { formatted } = await location.json()
 
-	bot.sendLocation(id, 41.325256, 69.245273)
-
-	console.log(formatted)
+	bot.sendLocation(519606993, 41.325256, 69.245273)
 })
 
 const PORT = process.env.PORT || 8000
