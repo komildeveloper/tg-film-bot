@@ -1,25 +1,8 @@
 import TelegramBot from 'node-telegram-bot-api'
-import express from 'express'
 import dotenv from 'dotenv'
 import fetch from 'node-fetch'
 
-// const options = {
-// 	webhook: {
-// 		port: process.env.PORT || 8000,
-// 		host: '0.0.0.0',
-// 		externalUrl: process.env.URL || 'https://my-app.herokuapp.com',
-// 		token: process.env.TOKEN
-// 	}
-// }
-
 dotenv.config({ path: '.env' })
-
-const app = express()
-
-// const bot = new TelegramBot(process.env.TOKEN, {
-// 	polling: true,
-// 	webHook: { port: port, host: host }
-// })
 
 const bot = new TelegramBot(process.env.TOKEN, {
 	polling: true
@@ -233,10 +216,4 @@ bot.on('location', async msg => {
 	bot.sendLocation(id, 41.325256, 69.245273)
 
 	console.log(formatted)
-})
-
-const PORT = process.env.PORT || 8000
-
-app.listen(PORT, () => {
-	console.log(`Server is running at port ${PORT}`)
 })
