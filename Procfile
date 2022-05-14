@@ -1,1 +1,1 @@
-dev: node index -p $PORT
+dev: npm index -p $PORT
