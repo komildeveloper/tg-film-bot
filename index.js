@@ -37,11 +37,11 @@ bot.onText(/\/start/, msg => {
 bot.on('message', msg => {
 	const { id, first_name } = msg.chat
 
-	if(msg.text === 'Biz haqimizda 👨‍💻') {
+	if (msg.text === 'Biz haqimizda 👨‍💻') {
 		bot.sendMessage(id, `Salom ${msg.chat.first_name}, Biz Panji Production`)
 	}
 
-	if(msg.text === 'Siz haqingizda 👦') {
+	if (msg.text === 'Siz haqingizda 👦') {
 		bot.sendMessage(id, `BOOM! @${msg.chat.username} telegram account hacked`)
 	}
 
