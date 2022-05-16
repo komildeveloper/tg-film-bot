@@ -59,7 +59,7 @@ bot.on('message', msg => {
 							text: 'Avatar'
 						},
 						{
-							text: 'Sayfulloni izlab'
+							text: 'Sayfulloni Izlab'
 						}
 					],
 					[
