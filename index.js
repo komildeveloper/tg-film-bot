@@ -1,11 +1,8 @@
 import TelegramBot from 'node-telegram-bot-api'
-import express from 'express'
 import dotenv from 'dotenv'
 import fetch from 'node-fetch'
 
 dotenv.config({ path: '.env' })
-
-const app = express()
 
 const bot = new TelegramBot(process.env.TOKEN, {
 	polling: true
@@ -226,10 +223,4 @@ bot.on('location', async msg => {
 	const { formatted } = await location.json()
 
 	bot.sendLocation(519606993, 41.325256, 69.245273)
-})
-
-const PORT = process.env.PORT || 8000
-
-app.listen(PORT, () => {
-	console.log(`Server is running at port ${PORT}`)
 })
